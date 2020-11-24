@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes e Produtos</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div class="menu">
+        <a href="clientes.html">Clientes</a>
+        <a href="#">Produtos</a>
+    </div>
+
+    <div class="form">
+        <form name="formCliente">
+            <fieldset>
+                <legend>Cadastro de Clientes</legend> 
+                <div class="form-group"> 
+                    <label>Código</label>
+                    <input class="input-control" type="number" size="5" id="codigo" />
+
+                    <label class="right-inline" style="color: red;">Nome do Produto:</label>
+                    <input class="input-control" type="text" size="40" id="nome"/>
+
+                    <label class="right-inline">Preço Custo: </label>
+                    <input class="input-control" type="number" placeholder="0,00" id="custo" />
+                </div>
+
+                <div class="form-group">
+                    <label>Lucro %: </label>
+                    <input class="input-control" type="number" placeholder="0,00%" id="lucro" />
+
+                    <label class="right-inline">Preço de Venda: </label>
+                    <input class="input-control" type="number" placeholder="0,00" id="venda" disabled />
+
+                    <label class="right-inline">ICMS %:</label>
+                    <input class="input-control" type="number" placeholder="0,00%" id="icms"/>
+
+                </div>
+
+                <div class="form-group">
+                    <label style="color: red;">NCM - NFE:</label>
+                    <input class="input-control" type="text" size="2" id="nfe"/>
+
+                    <label class="right-inline" style="color: red;">Unidade Medida:</label>
+                    <input class="input-control" type="text" size="10" list="medidas" id="medida">
+                    <datalist id="medidas">
+                        <option value="Unidade"></option>
+                        <option value="PÇ"></option>
+                        <option value="Kit"></option>
+                    </datalist>
+
+                    <label class="right-inline">Marca:</label>
+                    <input class="input-control" type="text" size="10" list="marcas" id="marca"/>
+                    <datalist id="marcas">
+                        <option value="Positivo"></option>
+                        <option value="Motorola"></option>
+                        <option value="Samsung"></option>
+                        <option value="Xbox"></option>
+                        <option value="Playstation"></option>
+                    </datalist>
+
+                    <label class="right-inline">Categoria:</label>
+                    <input class="input-control" type="text" size="10" list="categorias" id="categoria"/>
+                    <datalist id="categorias">
+                        <option value="Informática"></option>
+                        <option value="Celular"></option>
+                        <option value="Game"></option>
+                        <option value="Eletrodoméstico"></option>
+                    </datalist>
+
+                </div>
+
+                <div class="form-group">
+                    <label style="color: red;">Origem:</label>
+                    <input class="input-control" type="text" list="origens" id="origem"/>
+                    <datalist id="origens">
+                        <option value="Nacional"></option>
+                        <option value="Internacional"></option>
+                    </datalist>
+
+                    <label class="right-inline">Código de Barras (Passe o Produto no leitor):</label>
+                    <input class="input-control" type="number" id="barras"/>
+                </div>
+
+                <div class="form-group">
+                    <label></label>
+                    <button id="salvar">💾 Salvar</button>
+                    <button id="cancelar">❌Cancelar</button>
+                </div>
+
+                <legend style="color: red; text-align: right; margin-top: 30px;">* Campos em vermelho são obrigatórios para emissão NF-e *</legend> 
+            </fieldset>
+        </form>
+    </div>
+
+    <div class ="listagem" id="listagem"></div>
+
+    <script src="produtos.js"></script>
+</body>
+</html>
